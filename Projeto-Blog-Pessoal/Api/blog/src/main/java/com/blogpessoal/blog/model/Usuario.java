@@ -8,12 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "usuario"))
 public class Usuario {
 	
 	@Id 
@@ -21,11 +24,11 @@ public class Usuario {
 	Long id;
 	
 	@NotNull 
-	@Size (min =2, max = 100, message = "Tamanho entre 2 e 100")
+	@Size (min =2, max = 100)
 	private String nome;
 	
 	@NotNull 
-	@Size(min=6, max = 50, message = "Tamanho entre 6 e 50")
+	@Size(min=6, max = 50)
 	private String usuario;
 	
 	@NotNull 

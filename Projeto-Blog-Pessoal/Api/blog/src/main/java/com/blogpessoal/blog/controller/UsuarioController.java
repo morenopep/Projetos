@@ -20,7 +20,8 @@ import com.blogpessoal.blog.service.UsuarioService;
 
 
 @RestController 
-@CrossOrigin(origins = "*", allowedHeaders = "*") @RequestMapping("/usuarios")
+@CrossOrigin(origins = "*", allowedHeaders = "*") 
+@RequestMapping("/usuarios")
 @Transactional
 public class UsuarioController {
 	
