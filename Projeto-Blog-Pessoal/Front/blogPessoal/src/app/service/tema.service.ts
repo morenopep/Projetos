@@ -20,5 +20,22 @@ export class TemaService {
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('http://localhost:8080/tema',tema,this.token)
   }
+
+  //criando os metodos delete e put
+
+  putTema(tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>('http://localhost:8080/tema', tema, this.token)
+  }
+
+  deleteTema(id : number) {
+    return this.http.delete(`http://localhost:8080/tema/${id}`, this.token)
+  }
   
+  //metodos getById para buscar no banco pelo Id
+
+  getByIdTema(id: number):  Observable<Tema>{
+    return this.http.get<Tema>(`http://localhost:8080/tema/${id}`, this.token)
+  }
+
+
 }
